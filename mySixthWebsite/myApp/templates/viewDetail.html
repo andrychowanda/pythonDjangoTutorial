@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Sixth Website - View Details</title>
+    </head>
+    <body>
+        <h1> User Details </h1>
+        {% if usersData %}
+            <p>user name = {{usersData.userName}} </p> 
+            <p>first name = {{usersData.firstName}} </p>
+            <p>last name = {{usersData.lastName}} </p> 
+            <p>DOB = {{usersData.dob}} </p> 
+            <p>address = {{usersData.address}} </p>
+            <p>phone number = {{usersData.phoneNumber}} </p>
+        {% else %}
+            <p> NO DETAILS TO SHOW! </p>
+        {% endif %}
+        <a href={% url "index" %}> Back </a>
+    </body>
+</html>
+

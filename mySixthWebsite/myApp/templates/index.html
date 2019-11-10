@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Sixth Website - Index</title>
+    </head>
+    <body>
+        <h1>Hello, Welcome to my Sixth Website</h1>
+        <p> Here are the list of the users data: </p>
+        {% if usersData %}
+            <table>
+                <thead>
+                    <th>User Name </th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+            {% for user in usersData %}
+                <tr>
+                    <td><a href= {% url "viewDetail" user.userName %}> {{user.userName}} </a></td>
+                    <td><a href= {% url "update" user.userName %}> Edit </a> </td>
+                    <td><a href= {% url "delete" user.userName %}> Delete </a> </td>
+                </tr>
+            {% endfor %}
+            </table>
+        {% else %} <p>NO USERS FOUND!</p> 
+        {% endif %}
+        <p> please visit <a href="/form"> here </a> to register</p>
+    </body>
+</html>
+
